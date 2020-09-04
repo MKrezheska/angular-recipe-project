@@ -1,6 +1,10 @@
 import { Recipe } from './recipe.model';
+import { EventEmitter } from '@angular/core';
 
 export class RecipeService {
+
+    recipeSelected = new EventEmitter<Recipe>();
+
     private recipies: Recipe[] = [
         // tslint:disable-next-line: max-line-length
         new Recipe('A Test Recipe', 'This is a test', 'https://i1.wp.com/www.eatthis.com/wp-content/uploads/2019/10/pumpkin-pad-thai-recipe.jpg'),
