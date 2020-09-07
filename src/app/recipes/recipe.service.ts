@@ -8,11 +8,11 @@ export class RecipeService {
 
     recipeSelected = new EventEmitter<Recipe>();
 
-    private recipies: Recipe[] = [
+    private recipes: Recipe[] = [
         // tslint:disable-next-line: max-line-length
         new Recipe(
-            'A Test Recipe', 
-            'This is a test', 
+            'A Test Recipe',
+            'This is a test',
             'https://i1.wp.com/www.eatthis.com/wp-content/uploads/2019/10/pumpkin-pad-thai-recipe.jpg',
             [
                 new Ingredient('Meat', 1),
@@ -20,8 +20,8 @@ export class RecipeService {
             ]),
         // tslint:disable-next-line: max-line-length
         new Recipe(
-            'Another Test Recipe', 
-            'This is a test', 
+            'Another Test Recipe',
+            'This is a test',
             'https://i1.wp.com/www.eatthis.com/wp-content/uploads/2019/10/pumpkin-pad-thai-recipe.jpg',
             [
                 new Ingredient('Buns', 2),
@@ -34,10 +34,14 @@ export class RecipeService {
       ) {}
 
     getRecipes(): Recipe[] {
-        return this.recipies.slice();
+        return this.recipes.slice();
     }
 
-    addIngredientsToShoppingList(ingredients: Ingredient[]){
+    getRecipe(index: number): Recipe{
+        return this.recipes[index];
+    }
+
+    addIngredientsToShoppingList(ingredients: Ingredient[]): void{
         this.slService.addIngredienst(ingredients);
     }
 }
